@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 
 const config = {
     server: {
@@ -19,7 +20,7 @@ const config = {
       database: 'Wasla',
       port: '27979',
       ssl      : {
-        ca   : fs.readFileSync('.\\src\\ca.pem')
+        ca   : fs.readFileSync(path.join(__dirname, 'src', 'ca.pem'))
       }
   },
   };
