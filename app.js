@@ -82,7 +82,7 @@ app.get('/fact' , function(req, res){
   engine.getFacts();
 });
 
-app.get('/execs', function(req, res){
+app.get('/execs', async function(req, res){
   var execs = await backend.getEngineExecutions();
   res.send(execs);
 });
