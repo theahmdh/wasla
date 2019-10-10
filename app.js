@@ -8,7 +8,7 @@ const express = require('express'),
         bodyParser = require('body-parser');;
 
 const corsOptions = {
-  origin: 'http://localhost:3000',
+  origin: 'https://wasla-ui.herokuapp.com',
 }
 
 backend.connectClient();
