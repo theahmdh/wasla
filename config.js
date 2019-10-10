@@ -19,7 +19,7 @@ const config = {
       database: 'Wasla',
       port: '27979',
       ssl      : {
-        ca   : fs.readFileSync('src\\ca.pem')
+        ca   : fs.readFileSync('.\\src\\ca.pem')
       }
   },
   };
