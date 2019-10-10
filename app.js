@@ -82,8 +82,10 @@ app.get('/fact' , function(req, res){
   engine.getFacts();
 });
 
-
-
+app.get('/execs', function(req, res){
+  var execs = await backend.getEngineExecutions();
+  req.send(execs);
+})
 
 app.listen(process.env.PORT, function(){
     console.info(`listining on ${process.env.PORT}`)
