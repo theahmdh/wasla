@@ -86,4 +86,10 @@ async function persistExecutions(custID, execResult){
     return output;
 }
 
-module.exports = { connectClient, insertNewCustomer, updateExistingCustomer, DeleteCustomer, getAllCustomers, getAllRules, getDictioary, getFacts, updateRule, createNewRule, persistExecutions};
+async function getEngineExecutions(){
+    var getExecs = 'SELECT * FROM "EngineExecutions"';
+    var output = await client.query(getExecs);
+    return output;
+}
+
+module.exports = { connectClient, insertNewCustomer, updateExistingCustomer, DeleteCustomer, getAllCustomers, getAllRules, getDictioary, getFacts, updateRule, createNewRule, persistExecutions, getEngineExecutions};
