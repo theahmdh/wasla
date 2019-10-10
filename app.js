@@ -18,6 +18,9 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
+app.get('/', function(req, res){
+	res.send('Welcome, this means it works.');
+})
 app.get("/customers", async function(req, res) {
     //res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
     //res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
