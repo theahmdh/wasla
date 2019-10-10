@@ -85,6 +85,6 @@ app.get('/fact' , function(req, res){
 
 
 
-app.listen(appSettings.server.port, function(){
-    console.info(`http://${appSettings.server.server}:${appSettings.server.port}`)
+app.listen(process.env.PORT, function(){
+    console.info(`listining on ${process.env.PORT}`)
 });
