@@ -87,6 +87,12 @@ app.get('/execs', async function(req, res){
   res.send(execs);
 });
 
+function startEngine(){
+  var eng = engine.executeEngine();
+}
+
 app.listen(process.env.PORT, function(){
-    console.info(`listining on ${process.env.PORT}`)
+    console.info(`listining on ${process.env.PORT}`);
+    var interval = 1 * 60 * 1000;
+    setInterval(startEngine, interval);
 });
