@@ -93,6 +93,6 @@ function startEngine(){
 
 app.listen(process.env.PORT, function(){
     console.info(`listining on ${process.env.PORT}`);
-    var interval = 1 * 60 * 1000;
+    var interval = 30 * 60 * 1000;
     setInterval(startEngine, interval);
 });
