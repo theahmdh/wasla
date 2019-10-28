@@ -11,6 +11,8 @@ const corsOptions = {
   origin: 'https://wasla-ui.herokuapp.com',
 }
 
+const port = process.env.PORT || appSettings.server.port;
+
 backend.connectClient();
 app.use(cors(corsOptions));
 app.use(bodyParser.urlencoded({
@@ -91,8 +93,8 @@ function startEngine(){
   var eng = engine.executeEngine();
 }
 
-app.listen(process.env.PORT, function(){
-    console.info(`listining on ${process.env.PORT}`);
+app.listen(port, function(){
+    console.info(`listening on ${port}`);
     var interval = 30 * 60 * 1000;
     setInterval(startEngine, interval);
 });
