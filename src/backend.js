@@ -40,7 +40,7 @@ async function getAllCustomers(){
 
 async function getAllRules(){
     //var query = 'Select ROW_NUMBER() OVER (order by "FullName", "PromoName" DESC) AS "Seq", "CustomerID", "FullName", "Email", "PhoneNumber", "Status", "PromoName",  "Active" AS "isPromoActive", "Cost" AS "PromoCost", "Expiry" AS "PromoExpiry" from "CustomerPromo" LEFT JOIN "Customers" on "CustomerPromo"."CustomerID" = "Customers"."ID" LEFT JOIN "Promos" on "CustomerPromo"."PromoID" = "Promos"."ID"';
-    var query = 'SELECT * FROM public."RuleBase" WHERE "Active" = true  ORDER BY "ID" --limit 2';
+    var query = 'SELECT * FROM public."RuleBase" ORDER BY "ID" --limit 2 WHERE "Active" = true  ';
     
     const results = await client.query(query);
     
