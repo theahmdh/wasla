@@ -1,7 +1,7 @@
 const pg = require('pg'),
         appSettings = require('../config');
 
-const client = new pg.Client(appSettings.database); 
+const client = new pg.Client(process.env.DATABASE_URL || appSettings.database); 
 
 function connectClient(){
     try{
